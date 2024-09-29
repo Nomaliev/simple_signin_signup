@@ -38,6 +38,20 @@ dependencies:
   get: ^4.6.6
   firebase_core: ^3.6.0
   firebase_auth: ^5.3.1
+  iconsax: ^0.0.8
+  flutter_native_splash: ^2.4.1
+flutter_native_splash:
+  web: false
+  image: assets/images/1.jpg
+  image_dark: assets/images/1.jpg
+  color: "#FFFFFF"
+  color_dark: "#272727"
+  android_12:
+    image: assets/images/1.jpg
+    image_dark: assets/images/1.jpg
+    color: "FFFFFF"
+    color_dark: "#272727"
+
 
 dev_dependencies:
   flutter_test:

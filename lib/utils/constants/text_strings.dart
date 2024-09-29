@@ -7,4 +7,5 @@ class AppTextStrings {
   static const String forgotPassword = 'Forgot Password ?';
   static const String resetPassword = 'Reset Password';
   static const String requestReset = 'Request Reset';
+  static const String rememberMe = 'Remember Me';
 }
