@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:simple_signin_signup/utils/constants/colors.dart';
 import 'package:simple_signin_signup/utils/constants/theme/themes/appbar_theme.dart';
+import 'package:simple_signin_signup/utils/constants/theme/themes/checkbox_theme.dart';
 import 'package:simple_signin_signup/utils/constants/theme/themes/elevated_button_theme.dart';
 import 'package:simple_signin_signup/utils/constants/theme/themes/text_field_theme.dart';
 import 'package:simple_signin_signup/utils/constants/theme/themes/text_theme.dart';
 
 class AppThemes {
-  AppThemes._();
   //-- LIGHT THEME
   static ThemeData lightTheme = ThemeData(
       useMaterial3: true,
@@ -16,7 +16,8 @@ class AppThemes {
       textTheme: AppTextTheme.ligthTextTheme,
       appBarTheme: AppAppBarTheme.lightAppBarTheme,
       elevatedButtonTheme: AppElevatedButtonTheme.lightElevatedButtonTheme,
-      inputDecorationTheme: AppTextFieldTheme.lightTextFieldTheme);
+      inputDecorationTheme: AppTextFieldTheme.lightTextFieldTheme,
+      checkboxTheme: AppCheckBox.lightCheckBoxTheme);
   //-- DARK THEME
   static ThemeData darkTheme = ThemeData(
       useMaterial3: true,
@@ -26,5 +27,6 @@ class AppThemes {
       textTheme: AppTextTheme.darkTextTheme,
       appBarTheme: AppAppBarTheme.darkAppBarTheme,
       elevatedButtonTheme: AppElevatedButtonTheme.darkElevatedButtonTheme,
-      inputDecorationTheme: AppTextFieldTheme.darkTextFieldTheme);
+      inputDecorationTheme: AppTextFieldTheme.darkTextFieldTheme,
+      checkboxTheme: AppCheckBox.darkCheckBoxTheme);
 }

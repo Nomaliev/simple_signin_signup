@@ -34,6 +34,7 @@ class LoginPage extends StatelessWidget {
                       const SizedBox(height: AppSizes.sectionGap),
                       Form(
                           child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           TextFormField(
                               cursorColor: Colors.black,
@@ -45,6 +46,16 @@ class LoginPage extends StatelessWidget {
                             cursorColor: Colors.black,
                             decoration: const InputDecoration(
                                 labelText: AppTextStrings.password),
+                          ),
+                          Row(
+                            children: [
+                              Checkbox(
+                                value: true,
+                                onChanged: (value) {},
+                              ),
+                              const Text('Remember Me',
+                                  style: TextStyle(fontFamily: ''))
+                            ],
                           )
                         ],
                       )),

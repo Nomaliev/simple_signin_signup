@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:simple_signin_signup/utils/constants/app_sizes.dart';
 
 class AppTextFieldTheme {
-  AppTextFieldTheme._();
-
   //Light Theme
   static InputDecorationTheme lightTextFieldTheme = InputDecorationTheme(
     floatingLabelBehavior: FloatingLabelBehavior.never,
