@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:simple_signin_signup/features/authentication/controllers/login_controller.dart';
 import 'package:simple_signin_signup/utils/constants/app_sizes.dart';
 import 'package:simple_signin_signup/utils/constants/text_strings.dart';
 
@@ -10,6 +12,7 @@ class LoginSignupForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
     return Form(
         child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,12 +32,19 @@ class LoginSignupForm extends StatelessWidget {
         const SizedBox(height: AppSizes.smallGap / 2),
         Row(
           children: [
-            Checkbox(
-              value: true,
-              onChanged: (value) {},
+            Obx(
+              () => Checkbox(
+                value: controller.isChecked.value,
+                onChanged: (value) =>
+                    controller.isChecked.value = !controller.isChecked.value,
+              ),
             ),
-            const Text(AppTextStrings.rememberMe,
-                style: TextStyle(fontFamily: ''))
+            GestureDetector(
+              onTap: () =>
+                  controller.isChecked.value = !controller.isChecked.value,
+              child: const Text(AppTextStrings.rememberMe,
+                  style: TextStyle(fontFamily: '')),
+            )
           ],
         )
       ],

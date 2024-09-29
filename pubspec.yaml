@@ -40,6 +40,7 @@ dependencies:
   firebase_auth: ^5.3.1
   iconsax: ^0.0.8
   flutter_native_splash: ^2.4.1
+  get_storage: ^2.1.1
 flutter_native_splash:
   web: false
   image: assets/images/1.jpg
