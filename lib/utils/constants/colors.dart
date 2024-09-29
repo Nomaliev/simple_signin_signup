@@ -5,4 +5,6 @@ class AppColors {
   static const lightButtonColor = Color.fromARGB(255, 202, 198, 185);
   static const backgroundColor = Color.fromARGB(255, 219, 216, 206);
   static const lightColor = Color.fromARGB(255, 226, 224, 217);
+  static const black = Color(0xff000000);
+  static const white = Color(0xffffffff);
 }

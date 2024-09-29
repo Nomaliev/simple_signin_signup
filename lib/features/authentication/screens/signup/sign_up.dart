@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:simple_signin_signup/utils/constants/app_sizes.dart';
 import 'package:simple_signin_signup/utils/constants/colors.dart';
+import 'package:simple_signin_signup/utils/constants/helpers.dart';
 import 'package:simple_signin_signup/utils/constants/text_strings.dart';
 
 class SignUpPage extends StatelessWidget {
@@ -8,9 +10,16 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AppHelperFunctions.isDark(context);
     return Scaffold(
-      appBar: AppBar(backgroundColor: AppColors.backgroundColor),
-      backgroundColor: AppColors.backgroundColor,
+      appBar: AppBar(
+        leading: IconButton(
+            onPressed: () => Get.back(),
+            icon: Icon(
+              Icons.arrow_back,
+              color: isDark ? AppColors.white : AppColors.black,
+            )),
+      ),
       body: SingleChildScrollView(
         physics: const NeverScrollableScrollPhysics(),
         child: Column(
@@ -28,83 +37,54 @@ class SignUpPage extends StatelessWidget {
                             fontSize: 32, fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: AppSizes.sectionGap),
-                      TextFormField(
-                        cursorColor: Colors.black,
-                        decoration: InputDecoration(
-                            contentPadding:
-                                const EdgeInsets.all(AppSizes.defaultPadding),
-                            floatingLabelBehavior: FloatingLabelBehavior.never,
-                            fillColor: AppColors.lightColor,
-                            filled: true,
-                            labelText: AppTextStrings.email,
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30),
-                                borderSide: BorderSide.none)),
-                      ),
-                      const SizedBox(height: AppSizes.itemGap),
-                      TextFormField(
-                        obscureText: true,
-                        cursorColor: Colors.black,
-                        decoration: InputDecoration(
-                            contentPadding:
-                                const EdgeInsets.all(AppSizes.defaultPadding),
-                            floatingLabelBehavior: FloatingLabelBehavior.never,
-                            fillColor: AppColors.lightColor,
-                            filled: true,
-                            labelText: AppTextStrings.password,
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30),
-                                borderSide: BorderSide.none)),
-                      ),
-                      const SizedBox(height: AppSizes.itemGap),
-                      TextFormField(
-                        obscureText: true,
-                        cursorColor: Colors.black,
-                        decoration: InputDecoration(
-                            contentPadding:
-                                const EdgeInsets.all(AppSizes.defaultPadding),
-                            floatingLabelBehavior: FloatingLabelBehavior.never,
-                            fillColor: AppColors.lightColor,
-                            filled: true,
-                            labelText: AppTextStrings.confirmPassword,
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(30),
-                                borderSide: BorderSide.none)),
-                      ),
+                      Form(
+                          child: Column(
+                        children: [
+                          TextFormField(
+                            decoration: const InputDecoration(
+                              labelText: AppTextStrings.email,
+                            ),
+                          ),
+                          const SizedBox(height: AppSizes.itemGap),
+                          TextFormField(
+                              obscureText: true,
+                              decoration: const InputDecoration(
+                                labelText: AppTextStrings.password,
+                              )),
+                          const SizedBox(height: AppSizes.itemGap),
+                          TextFormField(
+                              obscureText: true,
+                              decoration: const InputDecoration(
+                                labelText: AppTextStrings.confirmPassword,
+                              )),
+                        ],
+                      )),
                       const SizedBox(height: AppSizes.sectionGap),
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              foregroundColor: Colors.white,
-                              backgroundColor: AppColors.darkButtonColor,
-                              elevation: 0,
-                              padding:
-                                  const EdgeInsets.all(AppSizes.defaultPadding),
-                            ),
                             onPressed: () {},
-                            child: const Text(
-                              AppTextStrings.signUp,
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 16),
-                            )),
+                            child: Text(AppTextStrings.signUp,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleLarge!
+                                    .copyWith(
+                                        color: isDark
+                                            ? AppColors.black
+                                            : AppColors.white))),
                       ),
                       const SizedBox(height: AppSizes.itemGap),
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              foregroundColor: Colors.black,
-                              backgroundColor: AppColors.lightButtonColor,
-                              elevation: 0,
-                              padding:
-                                  const EdgeInsets.all(AppSizes.defaultPadding),
-                            ),
+                                backgroundColor: isDark
+                                    ? const Color.fromARGB(255, 29, 27, 27)
+                                    : AppColors.lightButtonColor),
                             onPressed: () {},
-                            child: const Text(
+                            child: Text(
                               AppTextStrings.logIn,
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 16),
+                              style: Theme.of(context).textTheme.titleLarge,
                             )),
                       ),
                     ],

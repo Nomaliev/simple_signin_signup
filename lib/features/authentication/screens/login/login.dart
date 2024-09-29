@@ -4,6 +4,7 @@ import 'package:simple_signin_signup/features/authentication/screens/resetpasswo
 import 'package:simple_signin_signup/features/authentication/screens/signup/sign_up.dart';
 import 'package:simple_signin_signup/utils/constants/app_sizes.dart';
 import 'package:simple_signin_signup/utils/constants/colors.dart';
+import 'package:simple_signin_signup/utils/constants/helpers.dart';
 import 'package:simple_signin_signup/utils/constants/image_strings.dart';
 import 'package:simple_signin_signup/utils/constants/text_strings.dart';
 
@@ -12,6 +13,7 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = AppHelperFunctions.isDark(context);
     return Scaffold(
       body: SingleChildScrollView(
         physics: const NeverScrollableScrollPhysics(),
@@ -34,34 +36,15 @@ class LoginPage extends StatelessWidget {
                           child: Column(
                         children: [
                           TextFormField(
-                            cursorColor: Colors.black,
-                            decoration: InputDecoration(
-                                contentPadding: const EdgeInsets.all(20),
-                                floatingLabelBehavior:
-                                    FloatingLabelBehavior.never,
-                                fillColor: AppColors.lightColor,
-                                filled: true,
-                                labelStyle: const TextStyle(fontFamily: 'Play'),
-                                labelText: AppTextStrings.email,
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(30),
-                                    borderSide: BorderSide.none)),
-                          ),
+                              cursorColor: Colors.black,
+                              decoration: const InputDecoration(
+                                  labelText: AppTextStrings.email)),
                           const SizedBox(height: AppSizes.itemGap),
                           TextFormField(
                             obscureText: true,
                             cursorColor: Colors.black,
-                            decoration: InputDecoration(
-                                contentPadding: const EdgeInsets.all(20),
-                                floatingLabelBehavior:
-                                    FloatingLabelBehavior.never,
-                                fillColor: AppColors.lightColor,
-                                filled: true,
-                                labelText: AppTextStrings.password,
-                                labelStyle: const TextStyle(fontFamily: 'Play'),
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(30),
-                                    borderSide: BorderSide.none)),
+                            decoration: const InputDecoration(
+                                labelText: AppTextStrings.password),
                           )
                         ],
                       )),
@@ -69,31 +52,24 @@ class LoginPage extends StatelessWidget {
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              foregroundColor: Colors.white,
-                              backgroundColor: AppColors.darkButtonColor,
-                              elevation: 0,
-                              padding:
-                                  const EdgeInsets.all(AppSizes.defaultPadding),
-                            ),
                             onPressed: () {},
                             child: Text(AppTextStrings.logIn,
                                 style: Theme.of(context)
                                     .textTheme
                                     .titleLarge!
-                                    .copyWith(color: Colors.white))),
+                                    .copyWith(
+                                        color: isDark
+                                            ? AppColors.black
+                                            : AppColors.white))),
                       ),
                       const SizedBox(height: AppSizes.itemGap),
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              foregroundColor: Colors.black,
-                              backgroundColor: AppColors.lightButtonColor,
-                              elevation: 0,
-                              padding:
-                                  const EdgeInsets.all(AppSizes.defaultPadding),
-                            ),
+                                backgroundColor: isDark
+                                    ? const Color.fromARGB(255, 29, 27, 27)
+                                    : AppColors.lightButtonColor),
                             onPressed: () => Get.to(() => const SignUpPage()),
                             child: Text(AppTextStrings.signUp,
                                 style: Theme.of(context).textTheme.titleLarge)),
@@ -106,7 +82,7 @@ class LoginPage extends StatelessWidget {
                           style: TextStyle(fontFamily: ''),
                         ),
                       ),
-                      const SizedBox(height: 102),
+                      const SizedBox(height: 92),
                       const Image(image: AssetImage(AppImageStrings.buggyMan))
                     ],
                   )
