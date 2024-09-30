@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
 import 'package:simple_signin_signup/app.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:simple_signin_signup/data/repositories/authentication_repo.dart';
