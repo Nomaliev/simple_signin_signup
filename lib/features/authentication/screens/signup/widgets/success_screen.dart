@@ -42,7 +42,7 @@ class SignUpSuccessScreen extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                  onPressed: () => Get.offAll(const LoginPage()),
+                  onPressed: () => Get.offAll(() => const LoginPage()),
                   child: Text(
                     'Continue',
                     style: Theme.of(context).textTheme.titleLarge!.copyWith(

@@ -29,7 +29,7 @@ class LoginController extends GetxController {
           });
 
       if (!loginFormKey.currentState!.validate()) {
-        Navigator.of(Get.overlayContext!).pop();
+        Get.back();
         return;
       }
 
@@ -39,7 +39,7 @@ class LoginController extends GetxController {
       Get.offAll(() => const AppHome());
     } catch (e) {
       AppSnackbars.errorSnackBar(error: e.toString());
-      Navigator.of(Get.context!).pop();
+      Get.back();
     }
   }
 }

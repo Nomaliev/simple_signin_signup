@@ -20,7 +20,7 @@ class SignupButton extends StatelessWidget {
               backgroundColor: isDark
                   ? AppColors.darkThemeButtonColor
                   : AppColors.lightButtonColor),
-          onPressed: () => Get.to(() => const SignUpPage()),
+          onPressed: () => Get.offAll(() => const SignUpPage()),
           child: Text(AppTextStrings.signUp,
               style: Theme.of(context).textTheme.titleLarge)),
     );
