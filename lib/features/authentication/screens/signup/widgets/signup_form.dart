@@ -7,9 +7,7 @@ import 'package:simple_signin_signup/utils/constants/text_strings.dart';
 import 'package:simple_signin_signup/utils/constants/validation.dart';
 
 class SignupForm extends StatelessWidget {
-  const SignupForm({
-    super.key,
-  });
+  const SignupForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +23,7 @@ class SignupForm extends StatelessWidget {
                 labelText: AppTextStrings.email,
               ),
             ),
-            const SizedBox(height: AppSizes.itemGap),
+            SizedBox(height: AppSizes.itemGap),
             Obx(
               () => TextFormField(
                   validator: (value) => AppValidator.validatePassword(value),
@@ -40,7 +38,7 @@ class SignupForm extends StatelessWidget {
                               ? Iconsax.eye_slash5
                               : Iconsax.eye4)))),
             ),
-            const SizedBox(height: AppSizes.itemGap),
+            SizedBox(height: AppSizes.itemGap),
             Obx(
               () => TextFormField(
                   validator: (value) =>

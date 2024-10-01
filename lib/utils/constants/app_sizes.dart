@@ -1,6 +1,31 @@
+import 'package:flutter/material.dart';
+
 class AppSizes {
-  static const double sectionGap = 32.0;
-  static const double itemGap = 16.0;
-  static const double defaultPadding = 24.0;
-  static const double smallGap = 10.0;
+  Size size = WidgetsBinding
+          .instance.platformDispatcher.views.first.physicalSize /
+      WidgetsBinding.instance.platformDispatcher.views.first.devicePixelRatio;
+  static double sectionGap =
+      (WidgetsBinding.instance.platformDispatcher.views.first.physicalSize /
+                  WidgetsBinding
+                      .instance.platformDispatcher.views.first.devicePixelRatio)
+              .height /
+          26;
+  static double itemGap =
+      (WidgetsBinding.instance.platformDispatcher.views.first.physicalSize /
+                  WidgetsBinding
+                      .instance.platformDispatcher.views.first.devicePixelRatio)
+              .height /
+          56;
+  static double defaultPadding =
+      (WidgetsBinding.instance.platformDispatcher.views.first.physicalSize /
+                  WidgetsBinding
+                      .instance.platformDispatcher.views.first.devicePixelRatio)
+              .height /
+          38;
+  static double smallGap =
+      (WidgetsBinding.instance.platformDispatcher.views.first.physicalSize /
+                  WidgetsBinding
+                      .instance.platformDispatcher.views.first.devicePixelRatio)
+              .height /
+          90;
 }

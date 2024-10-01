@@ -20,7 +20,7 @@ class LoginPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.all(AppSizes.defaultPadding),
+              padding: EdgeInsets.all(AppSizes.defaultPadding),
               child: Column(
                 children: [
                   Column(
@@ -30,13 +30,13 @@ class LoginPage extends StatelessWidget {
                         AppTextStrings.logIn,
                         style: Theme.of(context).textTheme.headlineLarge,
                       ),
-                      const SizedBox(height: AppSizes.sectionGap),
+                      SizedBox(height: AppSizes.sectionGap),
                       const LoginSignupForm(),
-                      const SizedBox(height: AppSizes.sectionGap),
+                      SizedBox(height: AppSizes.sectionGap),
                       const LoginButton(),
-                      const SizedBox(height: AppSizes.itemGap),
+                      SizedBox(height: AppSizes.itemGap),
                       const SignupButton(),
-                      const SizedBox(height: AppSizes.smallGap),
+                      SizedBox(height: AppSizes.smallGap),
                       GestureDetector(
                         onTap: () => Get.to(() => const ResetPasswordPage()),
                         child: const Text(

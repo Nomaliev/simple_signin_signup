@@ -9,7 +9,7 @@ class AppElevatedButtonTheme {
           foregroundColor: AppColors.white,
           backgroundColor: AppColors.darkButtonColor,
           elevation: 0,
-          padding: const EdgeInsets.all(AppSizes.defaultPadding)));
+          padding: EdgeInsets.all(AppSizes.defaultPadding)));
 
   //Dark Theme
   static final darkElevatedButtonTheme = ElevatedButtonThemeData(
@@ -17,5 +17,5 @@ class AppElevatedButtonTheme {
           foregroundColor: AppColors.white,
           backgroundColor: AppColors.lightButtonColor,
           elevation: 0,
-          padding: const EdgeInsets.all(AppSizes.defaultPadding)));
+          padding: EdgeInsets.all(AppSizes.defaultPadding)));
 }

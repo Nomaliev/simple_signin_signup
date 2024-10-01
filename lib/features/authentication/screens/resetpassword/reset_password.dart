@@ -17,16 +17,16 @@ class ResetPasswordPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.all(AppSizes.defaultPadding),
+              padding: EdgeInsets.all(AppSizes.defaultPadding),
               child: Column(
                 children: [
                   Column(
                     children: [
                       Text(AppTextStrings.resetPassword,
                           style: Theme.of(context).textTheme.headlineLarge),
-                      const SizedBox(height: AppSizes.sectionGap),
+                      SizedBox(height: AppSizes.sectionGap),
                       const ResetPasswordForm(),
-                      const SizedBox(height: AppSizes.sectionGap),
+                      SizedBox(height: AppSizes.sectionGap),
                       const ResetButton(),
                     ],
                   )

@@ -4,8 +4,9 @@ import 'package:simple_signin_signup/utils/constants/app_sizes.dart';
 class AppTextFieldTheme {
   //Light Theme
   static InputDecorationTheme lightTextFieldTheme = InputDecorationTheme(
+    suffixIconColor: const Color.fromARGB(255, 117, 117, 117),
     floatingLabelBehavior: FloatingLabelBehavior.never,
-    contentPadding: const EdgeInsets.all(AppSizes.defaultPadding),
+    contentPadding: EdgeInsets.all(AppSizes.defaultPadding),
     errorMaxLines: 3,
     labelStyle: const TextStyle().copyWith(fontSize: 16, color: Colors.black),
     hintStyle: const TextStyle().copyWith(fontSize: 14, color: Colors.black),
@@ -30,8 +31,9 @@ class AppTextFieldTheme {
 
   //Dark Theme
   static InputDecorationTheme darkTextFieldTheme = InputDecorationTheme(
+    suffixIconColor: Colors.grey,
     floatingLabelBehavior: FloatingLabelBehavior.never,
-    contentPadding: const EdgeInsets.all(AppSizes.defaultPadding),
+    contentPadding: EdgeInsets.all(AppSizes.defaultPadding),
     errorMaxLines: 2,
     labelStyle: const TextStyle().copyWith(fontSize: 16, color: Colors.white),
     hintStyle: const TextStyle().copyWith(fontSize: 14, color: Colors.white),

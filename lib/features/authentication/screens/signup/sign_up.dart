@@ -11,10 +11,10 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      appBar: SignupAppBar(),
+    return Scaffold(
+      appBar: const SignupAppBar(),
       body: SingleChildScrollView(
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -24,17 +24,17 @@ class SignUpPage extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                      Text(
+                      const Text(
                         AppTextStrings.signUp,
                         style: TextStyle(
                             fontSize: 32, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(height: AppSizes.sectionGap),
-                      SignupForm(),
+                      const SignupForm(),
                       SizedBox(height: AppSizes.sectionGap),
-                      SignupButton(),
+                      const SignupButton(),
                       SizedBox(height: AppSizes.itemGap),
-                      LoginButton(),
+                      const LoginButton(),
                     ],
                   )
                 ],
