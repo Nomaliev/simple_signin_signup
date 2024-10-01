@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:simple_signin_signup/features/authentication/screens/login/widgets/login_button.dart';
-import 'package:simple_signin_signup/features/authentication/screens/login/widgets/login_signup_form.dart';
+import 'package:simple_signin_signup/features/authentication/screens/login/widgets/login_form.dart';
 import 'package:simple_signin_signup/features/authentication/screens/login/widgets/signup_button.dart';
 import 'package:simple_signin_signup/features/authentication/screens/resetpassword/reset_password.dart';
 import 'package:simple_signin_signup/utils/constants/app_sizes.dart';

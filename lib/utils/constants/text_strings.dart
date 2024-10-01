@@ -8,4 +8,7 @@ class AppTextStrings {
   static const String resetPassword = 'Reset Password';
   static const String requestReset = 'Request Reset';
   static const String rememberMe = 'Remember Me';
+  static const String successTitle = 'Success !';
+  static const String successSubTitle =
+      'You have successfully registered your account !';
 }
