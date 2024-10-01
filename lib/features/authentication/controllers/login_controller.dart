@@ -36,7 +36,7 @@ class LoginController extends GetxController {
       await AuthenticationRepository.instance
           .loginWithEmailAndPassword(email.text.trim(), password.text.trim());
 
-      Get.to(() => const AppHome());
+      Get.offAll(() => const AppHome());
     } catch (e) {
       AppSnackbars.errorSnackBar(error: e.toString());
       Navigator.of(Get.context!).pop();

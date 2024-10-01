@@ -4,8 +4,7 @@ import 'package:simple_signin_signup/data/repositories/authentication_repo.dart'
 import 'package:simple_signin_signup/data/repositories/user_repo.dart';
 import 'package:simple_signin_signup/features/authentication/models/user_model.dart';
 import 'package:simple_signin_signup/features/authentication/screens/signup/widgets/success_screen.dart';
-import 'package:simple_signin_signup/utils/constants/colors.dart';
-import 'package:simple_signin_signup/utils/constants/helpers.dart';
+import 'package:simple_signin_signup/utils/constants/indicators/indicators.dart';
 import 'package:simple_signin_signup/utils/snackbars/snackbars.dart';
 
 class SignupController extends GetxController {
@@ -19,20 +18,10 @@ class SignupController extends GetxController {
 
   void signUp() async {
     try {
-      showDialog(
-          context: Get.context!,
-          builder: (context) {
-            return Center(
-                child: CircularProgressIndicator.adaptive(
-              valueColor: AlwaysStoppedAnimation(
-                  AppHelperFunctions.isDark(Get.context!)
-                      ? AppColors.lightButtonColor
-                      : AppColors.darkThemeButtonColor),
-            ));
-          });
+      AppIndicators.loadingIndicator();
 
       if (!signUpFormKey.currentState!.validate()) {
-        Navigator.of(Get.overlayContext!).pop();
+        Get.back();
         return;
       }
 
@@ -48,7 +37,7 @@ class SignupController extends GetxController {
       Get.to(() => const SignUpSuccessScreen());
     } catch (e) {
       AppSnackbars.errorSnackBar(error: e.toString());
-      Navigator.of(Get.context!).pop();
+      Get.back();
     }
   }
 }
