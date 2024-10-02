@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:simple_signin_signup/features/authentication/controllers/login_controller.dart';
 import 'package:simple_signin_signup/features/authentication/screens/login/widgets/login_button.dart';
 import 'package:simple_signin_signup/features/authentication/screens/login/widgets/login_form.dart';
 import 'package:simple_signin_signup/features/authentication/screens/login/widgets/signup_button.dart';
@@ -13,6 +14,7 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(LoginController());
     return Scaffold(
       body: SingleChildScrollView(
         physics: const NeverScrollableScrollPhysics(),
@@ -38,7 +40,8 @@ class LoginPage extends StatelessWidget {
                       const SignupButton(),
                       SizedBox(height: AppSizes.smallGap),
                       GestureDetector(
-                        onTap: () => Get.to(() => const ResetPasswordPage()),
+                        onTap: () =>
+                            Get.offAll(() => const ResetPasswordPage()),
                         child: const Text(
                           AppTextStrings.forgotPassword,
                           style: TextStyle(fontFamily: ''),

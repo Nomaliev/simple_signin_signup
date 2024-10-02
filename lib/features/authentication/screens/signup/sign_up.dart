@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:simple_signin_signup/features/authentication/controllers/signup_controller.dart';
 import 'package:simple_signin_signup/features/authentication/screens/signup/widgets/login_button.dart';
 import 'package:simple_signin_signup/features/authentication/screens/signup/widgets/signup_appbar.dart';
 import 'package:simple_signin_signup/features/authentication/screens/signup/widgets/signup_button.dart';
@@ -11,6 +13,7 @@ class SignUpPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(SignupController());
     return Scaffold(
       appBar: const SignupAppBar(),
       body: SingleChildScrollView(

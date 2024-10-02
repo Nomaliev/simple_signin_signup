@@ -6,9 +6,7 @@ import 'package:simple_signin_signup/utils/constants/helpers.dart';
 import 'package:simple_signin_signup/utils/constants/text_strings.dart';
 
 class SignupButton extends StatelessWidget {
-  const SignupButton({
-    super.key,
-  });
+  const SignupButton({super.key});
 
   @override
   Widget build(BuildContext context) {

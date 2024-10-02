@@ -11,4 +11,7 @@ class AppTextStrings {
   static const String successTitle = 'Success !';
   static const String successSubTitle =
       'You have successfully registered your account !';
+  static const String resetLinkSentTitle = 'Password reset link sent !';
+  static const String resetLinkSentSubTitle =
+      'Please check your email and reset your password.';
 }

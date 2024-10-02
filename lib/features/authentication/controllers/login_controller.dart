@@ -32,6 +32,8 @@ class LoginController extends GetxController {
 
       if (rememberMe.value) {
         await storage.write('remember_email', email.text.trim());
+      } else {
+        await storage.remove('remember_email');
       }
 
       await AuthenticationRepository.instance

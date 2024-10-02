@@ -9,14 +9,12 @@ import 'package:simple_signin_signup/utils/constants/text_strings.dart';
 import 'package:simple_signin_signup/utils/constants/validation.dart';
 
 class LoginSignupForm extends StatelessWidget {
-  const LoginSignupForm({
-    super.key,
-  });
+  const LoginSignupForm({super.key});
 
   @override
   Widget build(BuildContext context) {
     final isDark = AppHelperFunctions.isDark(context);
-    final controller = Get.put(LoginController());
+    final controller = LoginController.intance;
     return Form(
         key: controller.loginFormKey,
         child: Column(
