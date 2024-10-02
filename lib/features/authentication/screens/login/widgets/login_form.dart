@@ -51,14 +51,14 @@ class LoginSignupForm extends StatelessWidget {
               children: [
                 Obx(
                   () => Checkbox(
-                    value: controller.isChecked.value,
-                    onChanged: (value) => controller.isChecked.value =
-                        !controller.isChecked.value,
+                    value: controller.rememberMe.value,
+                    onChanged: (value) => controller.rememberMe.value =
+                        !controller.rememberMe.value,
                   ),
                 ),
                 GestureDetector(
-                  onTap: () =>
-                      controller.isChecked.value = !controller.isChecked.value,
+                  onTap: () => controller.rememberMe.value =
+                      !controller.rememberMe.value,
                   child: const Text(AppTextStrings.rememberMe,
                       style: TextStyle(fontFamily: '')),
                 )

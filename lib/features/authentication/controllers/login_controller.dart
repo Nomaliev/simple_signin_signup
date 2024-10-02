@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:simple_signin_signup/data/repositories/authentication_repo.dart';
 import 'package:simple_signin_signup/features/personalization/screens/home.dart';
-import 'package:simple_signin_signup/utils/constants/colors.dart';
-import 'package:simple_signin_signup/utils/constants/helpers.dart';
+import 'package:simple_signin_signup/utils/constants/indicators/indicators.dart';
 import 'package:simple_signin_signup/utils/snackbars/snackbars.dart';
 
 class LoginController extends GetxController {
@@ -11,26 +11,27 @@ class LoginController extends GetxController {
   final email = TextEditingController();
   final password = TextEditingController();
   final hidePassword = true.obs;
-  final isChecked = false.obs;
+  final rememberMe = false.obs;
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
+  final storage = GetStorage();
+
+  @override
+  void onInit() {
+    email.text = storage.read('remember_email') ?? '';
+    super.onInit();
+  }
 
   void logIn() async {
     try {
-      showDialog(
-          context: Get.context!,
-          builder: (context) {
-            return Center(
-                child: CircularProgressIndicator.adaptive(
-              valueColor: AlwaysStoppedAnimation(
-                  AppHelperFunctions.isDark(Get.context!)
-                      ? AppColors.lightButtonColor
-                      : AppColors.darkThemeButtonColor),
-            ));
-          });
+      AppIndicators.loadingIndicator();
 
       if (!loginFormKey.currentState!.validate()) {
         Get.back();
         return;
+      }
+
+      if (rememberMe.value) {
+        await storage.write('remember_email', email.text.trim());
       }
 
       await AuthenticationRepository.instance
