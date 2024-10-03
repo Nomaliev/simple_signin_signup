@@ -23,7 +23,7 @@ class AppThemes {
       useMaterial3: true,
       fontFamily: 'Play',
       brightness: Brightness.dark,
-      scaffoldBackgroundColor: const Color.fromARGB(255, 24, 23, 19),
+      scaffoldBackgroundColor: AppColors.darkBackgroundColor,
       textTheme: AppTextTheme.darkTextTheme,
       appBarTheme: AppAppBarTheme.darkAppBarTheme,
       elevatedButtonTheme: AppElevatedButtonTheme.darkElevatedButtonTheme,

@@ -5,6 +5,7 @@ class AppColors {
   static const darkThemeButtonColor = Color(0xff1D1B1B);
   static const lightButtonColor = Color(0xffCAC6B9);
   static const backgroundColor = Color(0xffDBD8CE);
+  static const darkBackgroundColor = Color(0xff181713);
   static const lightColor = Color(0xffE2E0D9);
   static const black = Color(0xff000000);
   static const white = Color(0xffffffff);
