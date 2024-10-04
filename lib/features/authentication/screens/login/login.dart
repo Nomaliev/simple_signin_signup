@@ -5,6 +5,7 @@ import 'package:simple_signin_signup/features/authentication/screens/login/widge
 import 'package:simple_signin_signup/features/authentication/screens/login/widgets/login_form.dart';
 import 'package:simple_signin_signup/features/authentication/screens/login/widgets/signup_button.dart';
 import 'package:simple_signin_signup/features/authentication/screens/resetpassword/reset_password.dart';
+import 'package:simple_signin_signup/features/authentication/screens/thememode/theme_modes.dart';
 import 'package:simple_signin_signup/utils/constants/app_sizes.dart';
 import 'package:simple_signin_signup/utils/constants/image_strings.dart';
 import 'package:simple_signin_signup/utils/constants/text_strings.dart';
@@ -17,7 +18,7 @@ class LoginPage extends StatelessWidget {
     Get.put(LoginController());
     return Scaffold(
       appBar: AppBar(
-        actions: [],
+        actions:  [IconButton(onPressed: ()=>Get.offAll(()=>const AppThemeModes()), icon: const Icon(Icons.settings,size: 30,))],
       ),
       body: SingleChildScrollView(
         physics: const NeverScrollableScrollPhysics(),
@@ -30,7 +31,7 @@ class LoginPage extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                      const SizedBox(height: 100),
+                       SizedBox(height: AppSizes.loginSizedBox),
                       Text(
                         AppTextStrings.logIn,
                         style: Theme.of(context).textTheme.headlineLarge,
