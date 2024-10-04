@@ -16,6 +16,9 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(LoginController());
     return Scaffold(
+      appBar: AppBar(
+        actions: [],
+      ),
       body: SingleChildScrollView(
         physics: const NeverScrollableScrollPhysics(),
         child: Column(
@@ -27,7 +30,7 @@ class LoginPage extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                      const SizedBox(height: 200),
+                      const SizedBox(height: 100),
                       Text(
                         AppTextStrings.logIn,
                         style: Theme.of(context).textTheme.headlineLarge,
