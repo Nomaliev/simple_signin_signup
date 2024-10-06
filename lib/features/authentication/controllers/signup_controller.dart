@@ -4,7 +4,7 @@ import 'package:simple_signin_signup/data/repositories/authentication_repo.dart'
 import 'package:simple_signin_signup/data/repositories/user_repo.dart';
 import 'package:simple_signin_signup/features/authentication/models/user_model.dart';
 import 'package:simple_signin_signup/features/authentication/screens/signup/widgets/success_screen.dart';
-import 'package:simple_signin_signup/utils/constants/indicators/indicators.dart';
+import 'package:simple_signin_signup/utils/indicators/indicators.dart';
 import 'package:simple_signin_signup/utils/snackbars/snackbars.dart';
 
 class SignupController extends GetxController {

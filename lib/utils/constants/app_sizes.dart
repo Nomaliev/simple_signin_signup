@@ -28,10 +28,10 @@ class AppSizes {
                       .instance.platformDispatcher.views.first.devicePixelRatio)
               .height /
           90;
-          static double loginSizedBox =
+  static double loginSizedBox =
       (WidgetsBinding.instance.platformDispatcher.views.first.physicalSize /
                   WidgetsBinding
                       .instance.platformDispatcher.views.first.devicePixelRatio)
               .height /
-          7.4;
+          9;
 }

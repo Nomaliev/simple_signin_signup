@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:simple_signin_signup/data/repositories/authentication_repo.dart';
 import 'package:simple_signin_signup/features/authentication/screens/resetpassword/widgets/password_sent.dart';
-import 'package:simple_signin_signup/utils/constants/indicators/indicators.dart';
+import 'package:simple_signin_signup/utils/indicators/indicators.dart';
 import 'package:simple_signin_signup/utils/snackbars/snackbars.dart';
 
 class ResetPasswordController extends GetxController {
